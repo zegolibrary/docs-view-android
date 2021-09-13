@@ -1,18 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'com.kezong.fat-aar'
     id 'maven-publish'
 }
-
-repositories {
-    mavenCentral()
-    google()
-    jcenter()
-    maven { url "https://jitpack.io" }
-}
-
-group = 'com.github.zegolibrary'
-version = '0.0.3'
 
 android {
     compileSdkVersion 30
@@ -48,8 +39,7 @@ dependencies {
     api "androidx.appcompat:appcompat:1.3.0"
     api 'androidx.webkit:webkit:1.4.0'
     api 'androidx.documentfile:documentfile:1.0.1'
-
-    api project(':sdk')
+    embed project(path: ':docsviewsdk', configuration: 'default')
 }
 
 afterEvaluate {
@@ -60,7 +50,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.zegolibrary'
                 artifactId = 'docs-view-android'
-                version = '0.0.3'
+                version = '0.0.4'
             }
         }
     }

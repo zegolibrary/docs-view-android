@@ -2,4 +2,4 @@
 .idea
 .gradle
 local.properties
-/sdk/build
+/docsviewsdk/build
