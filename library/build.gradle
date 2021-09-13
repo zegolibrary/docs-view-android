@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-//    id 'maven-publish'
+    id 'maven-publish'
 }
 
 repositories {
@@ -11,8 +11,8 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 
-//group = 'im.zego.docsview'
-//version = '0.0.1'
+group = 'com.github.zegolibrary'
+version = '0.0.3'
 
 android {
     compileSdkVersion 30
@@ -51,17 +51,17 @@ dependencies {
 
     api project(':sdk')
 }
-//
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            // Creates a Maven publication called "release".
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.github.jitpack'
-//                artifactId = 'android-example'
-//                version = '0.0.1'
-//            }
-//        }
-//    }
-//}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.zegolibrary'
+                artifactId = 'docs-view-android'
+                version = '0.0.3'
+            }
+        }
+    }
+}
