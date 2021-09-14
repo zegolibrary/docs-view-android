@@ -247,12 +247,13 @@ class BuildExecutor:
 
         opensource_branch_name = "master"
 
+        run_os_cmd("git checkout {}".format(opensource_branch_name))
         run_os_cmd("git add .")
         run_os_cmd("git status")
         run_os_cmd("git commit -m 'update version: {}'".format(release_tag))
-        run_os_cmd("git push --set-upstream origin {}".format(opensource_branch_name))
+        run_os_cmd("git push origin {}".format(opensource_branch_name))
         run_os_cmd("git tag {}".format(release_tag))
-        run_os_cmd("git push --set-upstream origin {} --tags".format(opensource_branch_name))
+        run_os_cmd("git push origin {} --tags".format(opensource_branch_name))
 
 
 def submit_opensource(self):
