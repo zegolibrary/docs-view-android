@@ -238,7 +238,7 @@ class BuildExecutor:
         update_py_cmd = "python3 {} {} \"{}\"".format(os.path.join(self._get_script_path(), 'update_libs.py'), self._get_project_path(), json.dumps(libs_json).replace('\"', '\\"'))
         run_os_cmd(update_py_cmd, True)
 
-        ls_cmd = "ls -al {}".format(os.path.join(self._get_project_path(), 'docsviewsdk', 'libs'))
+        ls_cmd = "ls -al {}".format(os.path.join(self._get_project_path(), 'docsviewsdk'))
         run_os_cmd(ls_cmd)
 
     def submit_new_tag(self):
