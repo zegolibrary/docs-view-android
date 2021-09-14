@@ -1,0 +1,8 @@
+{
+  "docsviewsdk": {
+    "version": "2.0.0.172",
+    "remote": "share02/product/zego_sdk/zegodocsview_master",
+    "local": "docsviewsdk",
+    "lib_name": "zegodocsview.aar"
+  }
+}
