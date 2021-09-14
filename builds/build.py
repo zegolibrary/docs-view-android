@@ -242,16 +242,16 @@ class BuildExecutor:
         run_os_cmd(ls_cmd)
 
     def submit_new_tag(self):
-        version_tag = os.environ.get('VERSION_TAG')
-        print("version_tag: " + version_tag)
+        release_tag = os.environ.get('RELEASE_TAG')
+        print("RELEASE_TAG: " + release_tag)
 
         opensource_branch_name = "master"
 
         run_os_cmd("git add .")
         run_os_cmd("git status")
-        run_os_cmd("git commit -m 'update version: {}'".format(version_tag))
+        run_os_cmd("git commit -m 'update version: {}'".format(release_tag))
         run_os_cmd("git push --set-upstream origin {}".format(opensource_branch_name))
-        run_os_cmd("git tag {}".format(version_tag))
+        run_os_cmd("git tag {}".format(release_tag))
         run_os_cmd("git push --set-upstream origin {} --tags".format(opensource_branch_name))
 
 
